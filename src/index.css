@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Body Styling - Executive Academic Palette */
+body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 204, 0.12), transparent 70%),
+    radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.04), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Base card and container overrides for clean, crisp contrast */
+.bg-slate-950 {
+  background-color: #0b0f19 !important;
+}
+
+.bg-slate-900 {
+  background-color: #111827 !important;
+  border: 1px solid #1f293d !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 1rem;
+}
+
+.bg-slate-900:hover {
+  border-color: #2b3954 !important;
+}
+
+/* Clean Form Controls */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+select, 
+textarea {
+  background-color: #0d1322 !important;
+  border: 1px solid #1e293b !important;
+  color: #f8fafc !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  border-radius: 0.75rem !important;
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="number"]:focus, 
+select:focus, 
+textarea:focus {
+  border-color: #00A8CC !important;
+  box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.18) !important;
+  outline: none !important;
+}
+
+/* Brand Button Styling */
+.bg-sky-600, .bg-blue-600 {
+  background-color: #00A8CC !important;
+  color: #030712 !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0, 168, 204, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bg-sky-600:hover, .bg-blue-600:hover {
+  background-color: #00beea !important;
+  box-shadow: 0 4px 16px rgba(0, 168, 204, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.bg-sky-600:active, .bg-blue-600:active {
+  transform: translateY(0);
+}
+
+/* Navbar */
+nav.bg-slate-900 {
+  background-color: rgba(17, 24, 39, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #1f293d !important;
+}
+
+/* Actor Simulator bar */
+#actor_switcher_bar {
+  background-color: #0d1322 !important;
+  border-bottom: 1px solid #1e293b !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Typography polish */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Editorial Serif Touches */
+.font-serif {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+}
+
+/* Fade animation */
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility Font Scaling Classes */
+html.text-size-large {
+  font-size: 118%;
+}
+
+html.text-size-xlarge {
+  font-size: 135%;
+}
+
+/* High Contrast Mode for visually impaired users */
+body.high-contrast-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast-mode .bg-slate-900,
+body.high-contrast-mode .bg-slate-950,
+body.high-contrast-mode nav {
+  background-color: #000000 !important;
+  border-color: #facc15 !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast-mode button,
+body.high-contrast-mode a,
+body.high-contrast-mode input,
+body.high-contrast-mode select,
+body.high-contrast-mode textarea {
+  border-color: #facc15 !important;
+  color: #ffffff !important;
+}
+
+/* High Contrast Focus Indicators for Keyboard Users */
+*:focus-visible {
+  outline: 3px solid #facc15 !important;
+  outline-offset: 2px !important;
+}
+
+/* Markdown typography polish */
+.markdown-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+}
+
+.markdown-body h1 {
+  font-size: 1.25rem;
+  color: #38bdf8;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.35rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.1rem;
+  color: #00A8CC;
+}
+
+.markdown-body strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.markdown-body code {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #0d1322;
+  padding: 0.2em 0.4em;
+  border-radius: 0.375rem;
+  border: 1px solid #1e293b;
+  font-size: 0.85em;
+  color: #38bdf8;
+}
+
+/* ==========================================
+   LIGHT MODE DESIGN SPECIFICATIONS (PROFESSIONAL EXECUTIVE PALETTE)
+   ========================================== */
+
+body.light-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 204, 0.08), transparent 70%),
+    radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.03), transparent 50%) !important;
+}
+
+body.light-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Light mode primary containers and cards */
+body.light-mode .bg-slate-900,
+body.light-mode [class*="bg-slate-900"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.light-mode .bg-slate-900:hover,
+body.light-mode [class*="bg-slate-900"]:hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* Light mode secondary containers, nested cards, and inner chips */
+body.light-mode .bg-slate-950,
+body.light-mode [class*="bg-slate-950"] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.light-mode .bg-slate-850,
+body.light-mode [class*="bg-slate-850"],
+body.light-mode .bg-slate-800,
+body.light-mode [class*="bg-slate-800"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.light-mode [class*="hover:bg-slate-800"]:hover,
+body.light-mode [class*="hover:bg-slate-700"]:hover,
+body.light-mode [class*="hover:bg-slate-850"]:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode [class*="border-slate-"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Light mode typography colors */
+body.light-mode .text-slate-100,
+body.light-mode .text-slate-200,
+body.light-mode .text-slate-300,
+body.light-mode [class*="text-slate-100"],
+body.light-mode [class*="text-slate-200"],
+body.light-mode [class*="text-slate-300"] {
+  color: #0f172a !important;
+}
+
+body.light-mode .text-slate-400,
+body.light-mode [class*="text-slate-400"] {
+  color: #334155 !important;
+}
+
+body.light-mode .text-slate-500,
+body.light-mode [class*="text-slate-500"] {
+  color: #475569 !important;
+}
+
+body.light-mode .text-slate-600,
+body.light-mode [class*="text-slate-600"] {
+  color: #64748b !important;
+}
+
+body.light-mode .text-cyan-400,
+body.light-mode .text-sky-400,
+body.light-mode [class*="text-cyan-400"],
+body.light-mode [class*="text-sky-400"] {
+  color: #0284c7 !important;
+}
+
+body.light-mode .text-emerald-400,
+body.light-mode [class*="text-emerald-400"] {
+  color: #059669 !important;
+}
+
+body.light-mode .text-indigo-400,
+body.light-mode .text-indigo-300,
+body.light-mode [class*="text-indigo-400"],
+body.light-mode [class*="text-indigo-300"] {
+  color: #4f46e5 !important;
+}
+
+body.light-mode .text-amber-400,
+body.light-mode .text-amber-500,
+body.light-mode [class*="text-amber-400"] {
+  color: #d97706 !important;
+}
+
+body.light-mode .text-red-400,
+body.light-mode .text-red-500,
+body.light-mode [class*="text-red-400"] {
+  color: #dc2626 !important;
+}
+
+/* Form controls in light mode */
+body.light-mode input[type="text"], 
+body.light-mode input[type="email"], 
+body.light-mode input[type="password"], 
+body.light-mode input[type="number"], 
+body.light-mode select, 
+body.light-mode textarea {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode input[type="text"]::placeholder, 
+body.light-mode input[type="email"]::placeholder, 
+body.light-mode input[type="password"]::placeholder, 
+body.light-mode input[type="number"]::placeholder, 
+body.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.light-mode input[type="text"]:focus, 
+body.light-mode input[type="email"]:focus, 
+body.light-mode input[type="password"]:focus, 
+body.light-mode input[type="number"]:focus, 
+body.light-mode select:focus, 
+body.light-mode textarea:focus {
+  border-color: #00A8CC !important;
+  box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.15) !important;
+}
+
+/* Navbar & Bars in Light Mode */
+body.light-mode nav.bg-slate-900,
+body.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode #actor_switcher_bar {
+  background-color: #f1f5f9 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Table styles in light mode */
+body.light-mode table thead tr {
+  background-color: #f1f5f9 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode table thead th {
+  color: #475569 !important;
+}
+
+body.light-mode table tbody tr {
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.light-mode table tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Light mode markdown typography */
+body.light-mode .markdown-body {
+  color: #334155 !important;
+}
+
+body.light-mode .markdown-body h1, 
+body.light-mode .markdown-body h2, 
+body.light-mode .markdown-body h3 {
+  color: #0f172a !important;
+}
+
+body.light-mode .markdown-body h1 {
+  color: #0284c7 !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+body.light-mode .markdown-body h2 {
+  color: #0088a8 !important;
+}
+
+body.light-mode .markdown-body strong {
+  color: #0f172a !important;
+}
+
+body.light-mode .markdown-body code {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0284c7 !important;
+}
+
+/* Light mode Footer */
+body.light-mode footer {
+  border-top-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
